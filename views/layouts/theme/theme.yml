@@ -1,0 +1,6 @@
+label:  The Theme
+description: The Theme
+icon:   bundles/appimport/theme/images/favicon.png
+logo:   bundles/appimport/theme/images/logo.png
+parent: default
+groups: [ commerce ]

@@ -1,0 +1,37 @@
+/* @theme: theme; */
+
+$theme-color-palette: (
+    'primary': (
+        'main': #1d2024,
+        'base': #9C155F,
+        'light': #E92579,
+        'dark': #9C155F
+    ),
+    'secondary': (
+		'main': #f23f7d,
+        'base': #5b85c7,
+        'light': #7ea6a4,
+        'lighten': #197b30,
+        'dark': #fa237f
+    ),
+    'additional': (
+        'ultra': #fff,
+        'base': #f5f5f5,
+        'light': #c5c5c5,
+        'middle': #b3b3b3,
+        'dark': #464646,
+        'darker': #000
+    ),
+    'ui': (
+        'error': #ffadad,
+        'error-dark': #7a0026,
+        'success': #d8e4e4,
+        'success-dark': #678684,
+        'warning': #fad6b7,
+        'warning-dark': #785e22,
+        'normal': #3e87b5,
+        'focus': #2e9adb
+    ),
+) !default;
+
+$color-palette: map_merge($color-palette, $theme-color-palette);

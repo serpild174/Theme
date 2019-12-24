@@ -1,0 +1,26 @@
+services:
+    app.importexport.data_converter:
+        parent: oro_importexport.data_converter.configurable
+
+    app.importexport.processor.export:
+        parent: oro_importexport.processor.export_abstract
+        calls:
+            - [setDataConverter, ['@app.importexport.data_converter']]
+        tags:
+            - name: oro_importexport.processor
+              type: export
+              entity: AppBundle\Entity\Task
+              alias: app_task
+    app.importexport.processor.import:
+        parent: oro_importexport.processor.import_abstract
+        calls:
+            - [setDataConverter, ['@app.importexport.data_converter']]
+        tags:
+            - name: oro_importexport.processor
+              type: import
+              entity: AppBundle\Entity\Task
+              alias: app_task
+    app.importexport.template_fixture.task:
+        class: AppBundle\ImportExport\TemplateFixture\TaskFixture
+        tags:
+            - { name: oro_importexport.template_fixture }

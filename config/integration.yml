@@ -1,0 +1,15 @@
+services:
+    app.integration.task:
+        class: AppBundle\Integration\TaskChannel
+        tags:
+            - { name: oro_integration.channel, type: app_channel }
+
+    app.integration.transport.rest:
+             class: AppBundle\Integration\RestTransport
+            tags:
+                - { name: oro_integration.transport, channel_type: app_channel, type: rest }
+
+    class: AppBundle\Integration\TaskConnector
+            tags:
+                - { name: oro_integration.connector, channel_type: app_channel, type: task }
+
